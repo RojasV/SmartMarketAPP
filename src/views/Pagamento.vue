@@ -153,7 +153,7 @@ export default {
     },
 
     atualizarEstoque(compraNova) {
-      HttpRequestUtil.atualizarQuantidade(compraNova).then(response => {});
+      HttpRequestUtil.atualizarQuantidade(compraNova).then(response => {alert("quantidade atualizada")});
     },
 
     selecPagamento() {
@@ -176,7 +176,7 @@ export default {
 
         HttpRequestUtil.salvarCompras(compraNova).then(compraRetornada => {
           localStorage.setItem("carrinho", JSON.stringify(this.carrinho));
-          // this.atualizarEstoque();
+          this.atualizarEstoque();
           this.dialog1 = true;
         });
       }
